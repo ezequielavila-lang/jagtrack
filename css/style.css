@@ -164,29 +164,41 @@ footer ul li {
   list-style: none;
   margin-bottom: 8px;
 }
+/* ===== CSS VARIABLES FOR LIGHT MODE (DEFAULT - SUNSET GLOW) ===== */
 
 :root {
-  --jag-blue: #667eea;       /* Purple-blue */
-  --jag-gold: #764ba2;       /* Deep purple */
-  --jag-accent: #00f2fe;     /* Cyan */
-  /* ... keep the rest ... */
+  /* Primary Brand Colors (Vibrant Sunset Tones) */
+  --jag-black: #FF7043; /* Bright Coral/Orange */
+  --jag-gold: #FFB74D; /* Soft Amber/Gold */
+  --jag-accent: #E53935; /* Deep Crimson/Red */
+
+  /* Text Colors */
+  --text-dark: #3E2723; /* Very Dark Brown (like a fading horizon) */
+  --text-light: #FFFFFF; /* Pure White */
+  --text-muted: #8D6E63; /* Muted Taupe/Brown */
+
+  /* Background Colors */
+  --background-light: #FFF3E0; /* Very light Cream/Peach (the high sky) */
+  --background-white: #FFFFFF; /* Pure White for contrast/cards */
+  --background-dark: #FFCCBC; /* Lighter Coral/Pink (the main sky wash) */
 }
-:root {
-:root {
-  --jag-blue: #1e1e1e;       /* Dark background */
-  --jag-gold:  #eedf0c;
-  --jag-accent: #bdb32d;
-  --text-dark: #e0e0e0;      /* Light text */
-  --text-light: #ffffff;
-  --background-light: #2d2d2d;
-  --background-white: #3a3a3a;
-}
-}
+
+/* ===== CSS VARIABLES FOR DARK MODE (TWILIGHT/NIGHT SKY) ===== */
+
+[data-theme="dark"]{
+  /* Primary Brand Colors (Deep Twilight Tones) */
+  --jag-black: #D500F9; /* Vivid Magenta/Purple (last burst of light) */
+  --jag-gold: #FFAB00; /* Bright Orange/Gold (the setting sun) */
+  --jag-accent: #673AB7; /* Deep Indigo/Violet */
+
+  /* Text Colors */
+  --text-dark: #FBEFFC; /* Off-White/Pale Lavender */
+  --text-light: #
 /* ===== NAVBAR STYLES ===== */
 
 
-.navbar {
- background: linear-gradient(135deg, var(--jag-black) 0%, #222222 100%);
+.navbar { 
+  background: linear-gradient(135deg, var(--jag-black) 0%, #222222 100%);
  padding: 0.5rem 1rem;
 }
 
@@ -271,33 +283,18 @@ body {
 .tab-pane .class-card {
  margin-bottom: 0;
 }
-/* ===== GOOGLE CALENDAR STYLES ===== */
 
 
-.calendar-container {
- position: relative;
- padding-bottom: 75%;
- height: 0;
- overflow: hidden;
- margin: 20px 0;
- border: 2px solid var(--jag-accent);
- border-radius: 8px;
- background-color: var(--background-white);
+#theme-toggle {
+ font-size: 1.5rem;
+ padding: 5px 10px;
+ margin-left: 10px;
+ border-radius: 50%;
+ transition: all 0.3s ease;
 }
 
 
-.google-calendar-responsive {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- border: 0;
-}
-
-
-@media (min-width: 768px) {
- .calendar-container {
-   padding-bottom: 56.25%;
- }
+#theme-toggle:hover {
+ background-color: rgba(255, 255, 255, 0.1);
+ transform: scale(1.1);
 }
